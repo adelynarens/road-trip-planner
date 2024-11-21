@@ -32,13 +32,16 @@ jobs:
 
       - name: Install ESLint
         run: |
+          cd client
           npm install eslint@8.10.0
           npm install @microsoft/eslint-formatter-sarif@3.1.0
 
       - name: Run ESLint
         env:
           SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
-        run: npx eslint .
+        run: |
+          cd client
+          npx eslint .
           --no-eslintrc
           --format @microsoft/eslint-formatter-sarif
           --output-file eslint-results.sarif
