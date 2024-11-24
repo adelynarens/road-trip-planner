@@ -37,6 +37,6 @@ export class MapComponent implements OnInit, AfterViewInit {
       if (this.map) {
         this.map.invalidateSize(); // ensure proper resizing once map is visible
       }
-    }, 0);
+    }, 0); // timeout of zero ensures the stack has been cleared before executing
   }
 }
