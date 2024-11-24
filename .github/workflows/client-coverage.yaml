@@ -1,11 +1,9 @@
 name: client-test-coverage
 on:
   push:
-    paths:
-      - 'client/**'
+    branches: [ "main" ]
   pull_request:
-    paths:
-      - 'client/**'
+    branches: [ "main" ]
 
 jobs:
   coverage:
@@ -47,4 +45,3 @@ jobs:
           name: coverage-report
           path: ./client/coverage
           retention-days: 30
-          

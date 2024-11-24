@@ -1,11 +1,9 @@
 name: client-tests
 on:
   push:
-    paths:
-      - 'client/**'
+    branches: [ "main" ]
   pull_request:
-    paths:
-      - 'client/**'
+    branches: [ "main" ]
 
 jobs:
   test:
@@ -29,4 +27,3 @@ jobs:
 
       - name: Run tests
         run: npm test -- --browsers=ChromeHeadlessCI --watch=false
-        
